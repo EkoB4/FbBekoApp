@@ -16,5 +16,7 @@ struct DataModal : Identifiable{
 
 extension DataModal{
     static let items = [
-    DataModal(name: "Sehmus", playerImage: Image("Seho"))]
+    DataModal(name: "Sehmus Hazer", playerImage: Image("Seho")),
+    DataModal(name:"Devin Booker", playerImage: Image("DB"))
+    ]
 }

@@ -11,8 +11,8 @@ struct PlayersButton: View {
     var body: some View {
         VStack{
             RoundedRectangle(cornerRadius: 20)
-                .frame(width:200,height: 300)
-                .foregroundColor(.blue)
+                .frame(width:200,height: 400)
+                .foregroundColor(Color("ButtonBackgroundColor"))
         }
     }
 }
@@ -21,7 +21,7 @@ struct PlayersScroll :View{
     var body: some View{
         ScrollView(.horizontal){
             VStack{
-                ForEach(0..<3){image in
+                ForEach(0..<2){image in
                         PlayersButton()
                     
                 }
