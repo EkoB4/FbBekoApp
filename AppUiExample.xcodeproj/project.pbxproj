@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		351CE57328767FF100BEDEF2 /* PlayerDataModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351CE57228767FF100BEDEF2 /* PlayerDataModal.swift */; };
+		351CE57528768B6B00BEDEF2 /* AppMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351CE57428768B6B00BEDEF2 /* AppMainView.swift */; };
 		352669D628737D5100D15D5E /* AppUiExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352669D528737D5100D15D5E /* AppUiExampleApp.swift */; };
 		352669D828737D5100D15D5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352669D728737D5100D15D5E /* ContentView.swift */; };
 		352669DA28737D5500D15D5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352669D928737D5500D15D5E /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		351CE57228767FF100BEDEF2 /* PlayerDataModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataModal.swift; sourceTree = "<group>"; };
+		351CE57428768B6B00BEDEF2 /* AppMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppMainView.swift; path = ../AppMainView.swift; sourceTree = "<group>"; };
 		352669D228737D5100D15D5E /* AppUiExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppUiExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		352669D528737D5100D15D5E /* AppUiExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUiExampleApp.swift; sourceTree = "<group>"; };
 		352669D728737D5100D15D5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,7 +146,6 @@
 				3588F23F28760BF20039076F /* Elements */,
 				35266A0528737DCC00D15D5E /* Views */,
 				35266A0228737D9600D15D5E /* StartScreen */,
-				352669D728737D5100D15D5E /* ContentView.swift */,
 			);
 			name = UiExample;
 			sourceTree = "<group>";
@@ -150,7 +153,7 @@
 		35266A0228737D9600D15D5E /* StartScreen */ = {
 			isa = PBXGroup;
 			children = (
-				35266A0328737DA500D15D5E /* StartScreen.swift */,
+				351CE57428768B6B00BEDEF2 /* AppMainView.swift */,
 			);
 			name = StartScreen;
 			sourceTree = "<group>";
@@ -158,7 +161,9 @@
 		35266A0528737DCC00D15D5E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				352669D728737D5100D15D5E /* ContentView.swift */,
 				35266A0028737D9000D15D5E /* MainView.swift */,
+				35266A0328737DA500D15D5E /* StartScreen.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				3588F24028760E8E0039076F /* DataModal.swift */,
+				351CE57228767FF100BEDEF2 /* PlayerDataModal.swift */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -309,6 +315,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				351CE57328767FF100BEDEF2 /* PlayerDataModal.swift in Sources */,
+				351CE57528768B6B00BEDEF2 /* AppMainView.swift in Sources */,
 				3588F23E28760BEA0039076F /* ScreenElements.swift in Sources */,
 				3588F24128760E8E0039076F /* DataModal.swift in Sources */,
 				352669D828737D5100D15D5E /* ContentView.swift in Sources */,

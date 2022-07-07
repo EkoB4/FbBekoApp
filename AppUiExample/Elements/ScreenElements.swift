@@ -19,9 +19,12 @@ struct PlayersButton: View {
 
 struct PlayersScroll :View{
     var body: some View{
-        VStack{
-            ForEach(PlayersButton(),id:\.self){ players in
-                Text(players)
+        ScrollView(.horizontal){
+            VStack{
+                ForEach(0..<3){image in
+                        PlayersButton()
+                    
+                }
             }
         }
     }
