@@ -11,7 +11,8 @@ import SwiftUI
 class PlayerDataModal : ObservableObject{
     init(){
         items = DataModal.items
+        filterItems = FilterData.filterItems
     }
     @Published var items : [DataModal]
-    
+    @Published var filterItems : [FilterData]
 }

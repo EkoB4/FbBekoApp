@@ -16,38 +16,19 @@ struct ContentView: View {
                 .bold()
                 .multilineTextAlignment(.leading)
                 .font(.system(size:40))
-                .padding(.trailing,230)
-            HStack{
-              Text("Players")
-                    .padding(.trailing,280)
+                .padding(.trailing,255)
+            VStack{
+                PlayerFilterScrollView()
+            }.frame(width:.infinity,height: UIScreen.main.bounds.height/9)
+            VStack{
+                PlayersScroll()
             }
-            ScrollView(.horizontal){
-                LazyHStack(spacing:20){
-                    ForEach(0..<2){test in
-                        ForEach(viewModal.items){item in
-                            PlayersButton().overlay(
-                                VStack{
-                                    Text(item.name)
-                                        .bold()
-                                        .foregroundColor(.white)
-                                        .multilineTextAlignment(.center)
-                                    VStack{
-                                item.playerImage
-                                    .resizable()
-                                    .offset(y:20)
-                                    .frame(width:180,height:330)
-                                    }
-                                }
-                            )
-                        }
-                        
-                    }
-                }.padding()
-            }
-            Spacer(minLength: 200)
+            Spacer(minLength: UIScreen.main.bounds.height*0.2 )
+
         }
     }
 }
+
 
 
 struct ContentView_Previews: PreviewProvider {
