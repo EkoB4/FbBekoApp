@@ -23,22 +23,43 @@ struct PlayerItemRectangle: View {
     var body: some View{
         RoundedRectangle(cornerRadius: 20)
             .stroke(.green)
-            .foregroundColor(.white)
+            .background(.black)
+            .cornerRadius(20)
             .frame(width:300,height: 80)
+        
     }
 }
 
-struct playerItemScrollView:View{
+struct DevinBookerScreen : View{
     @StateObject private var viewModal : PlayerDataModal = PlayerDataModal()
     var body: some View{
-        List(viewModal.playerItems){data in
-            PlayerItemRectangle()
-        }.listStyle(.sidebar)
+        VStack{
+            ForEach(viewModal.DevinBookerItems){player in
+                PlayerItemRectangle().overlay(
+                        VStack{
+                        player.shoe
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .padding(.leading,150)
+                            HStack{
+                                VStack{                                Text(player.shoeName)
+                                    .bold()
+                                    .foregroundColor(.white)
+                                   // .offset(y:-50)
+                                    .padding(.bottom,70)
+                                }.frame(height:30)
+                                    Spacer(minLength: 60)
+                            }
+                        }
+                    )
+                
+            }
+        }
     }
 }
 
 struct PlayerDetails_Previews: PreviewProvider {
     static var previews: some View {
-        playerItemScrollView()
+        DevinBookerScreen()
     }
 }

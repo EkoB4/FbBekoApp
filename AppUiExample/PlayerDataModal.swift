@@ -12,9 +12,12 @@ class PlayerDataModal : ObservableObject{
     init(){
         items = DataModal.items
         filterItems = FilterData.filterItems
-        playerItems = PlayerItemModal.playerItems
+        DevinBookerItems = PlayerItemModal.DevinBooker
+        playerItems = PlayerItemModal.DeColo
+        playerItems = PlayerItemModal.SehmusHazer
     }
     @Published var items : [DataModal]
     @Published var filterItems : [FilterData]
     @Published var playerItems : [PlayerItemModal]
+    @Published var DevinBookerItems : [PlayerItemModal]
 }
