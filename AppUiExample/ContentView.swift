@@ -15,15 +15,21 @@ struct ContentView: View {
             Text("Home")
                 .bold()
                 .multilineTextAlignment(.leading)
-                .font(.system(size:40))
+                .font(.system(size:50))
                 .padding(.trailing,255)
+            HStack{
+            Text("Filter")
+                    .font(.system(size: 20))
+                    .padding(.leading,15)
+                Spacer(minLength: 10)
+            }
             VStack{
                 PlayerFilterScrollView()
-            }.frame(width:.infinity,height: UIScreen.main.bounds.height/9)
+            }.frame(width:.infinity,height: UIScreen.main.bounds.height/14)
             VStack{
                 PlayersScroll()
             }
-            Spacer(minLength: UIScreen.main.bounds.height*0.2 )
+            Spacer(minLength: UIScreen.main.bounds.height*0.2)
 
         }
     }

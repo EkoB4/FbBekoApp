@@ -35,7 +35,7 @@ struct PlayersScroll :View{
     var body: some View{
         ScrollView(.horizontal){
             LazyHStack(spacing:20){
-                ForEach(0..<2){test in
+                ForEach(0..<1){test in
                     ForEach(viewModal.items){item in
                         PlayersButton().overlay(
                             VStack{
