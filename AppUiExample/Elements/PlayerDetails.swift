@@ -22,22 +22,42 @@ struct DevinBookerScreen : View{
     @StateObject private var viewModal : PlayerDataModal = PlayerDataModal()
     var body: some View{
         VStack{
-            HStack{
+            VStack{
                 ForEach(viewModal.DevinBookerItems){player in
                 VStack{
-                    Image("DB").padding(.leading,230)
-                        HStack{
-                            Text(player.shoeName)
-                                .foregroundColor(.white)
-                                .bold()
-                                .padding(.bottom,30)
-                            player.shoe
-                                .resizable()
-                                .frame(width:100,height:100)
-                        }.background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color("playerScreenColor"))
-                                        .frame(width:250,height: 60)
-                        )
-                    }.padding(.trailing,160)
+                    HStack(alignment:.bottom){
+                         RoundedRectangle(cornerRadius: 20)
+                            .frame(width:.infinity,height: 300)
+                            .padding(.top,600)
+                            .foregroundColor(.white)
+                            .overlay(HStack{
+                                player.shoe
+                                    .resizable()
+                                    .frame(width: 200, height: 200)
+                                    .padding(.top,350)
+                                VStack{
+                                Text(player.shoeName)
+                                    .font(.system(size:30))
+                                    .bold()
+                                    .padding(.top,410)
+                                    
+                                    Button {
+                                        print("Booker screen openend")
+                                    } label: {
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color("ButtonBackgroundColor"))
+                                            .overlay(Text("Go").bold()
+                                                        .foregroundColor(.white))
+                                            .frame(width:200,height:30)
+                                            .offset(y:-20)
+                                    }
+
+                                   
+                                }
+                                Spacer(minLength:UIScreen.main.bounds.width/30)
+                            })
+                    }
+                }.background(Color("ButtonBackgroundColor").ignoresSafeArea().overlay(Image("DB")))
                 }
             }
         }
