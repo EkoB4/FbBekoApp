@@ -37,7 +37,7 @@ extension DataModal{
     ]
 }
 extension PlayerItemModal{
-    static let DevinBooker = [PlayerItemModal(shoe: Image("GF3"), shoeName: "Zoom Freak", shirt: "")]
+    static let DevinBooker = [PlayerItemModal(shoe: Image("GF3"), shoeName: "Zoom Freak", shirt: "Sa")]
     static let DeColo = [PlayerItemModal(shoe: Image("KY7"), shoeName: "Zoom Freak", shirt: "")]
     static let SehmusHazer = [PlayerItemModal(shoe: Image("KX"), shoeName: "Zoom Freak", shirt: "")]
 

@@ -18,41 +18,27 @@ struct PlayerDetails: View {
         }
     }
 }
-
-struct PlayerItemRectangle: View {
-    var body: some View{
-        RoundedRectangle(cornerRadius: 20)
-            .stroke(.green)
-            .background(.black)
-            .cornerRadius(20)
-            .frame(width:300,height: 80)
-        
-    }
-}
-
 struct DevinBookerScreen : View{
     @StateObject private var viewModal : PlayerDataModal = PlayerDataModal()
     var body: some View{
         VStack{
-            ForEach(viewModal.DevinBookerItems){player in
-                PlayerItemRectangle().overlay(
-                        VStack{
-                        player.shoe
-                            .resizable()
-                            .frame(width: 100, height: 100)
-                            .padding(.leading,150)
-                            HStack{
-                                VStack{                                Text(player.shoeName)
-                                    .bold()
-                                    .foregroundColor(.white)
-                                   // .offset(y:-50)
-                                    .padding(.bottom,70)
-                                }.frame(height:30)
-                                    Spacer(minLength: 60)
-                            }
-                        }
-                    )
-                
+            HStack{
+                ForEach(viewModal.DevinBookerItems){player in
+                VStack{
+                    Image("DB").padding(.leading,230)
+                        HStack{
+                            Text(player.shoeName)
+                                .foregroundColor(.white)
+                                .bold()
+                                .padding(.bottom,30)
+                            player.shoe
+                                .resizable()
+                                .frame(width:100,height:100)
+                        }.background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color("playerScreenColor"))
+                                        .frame(width:250,height: 60)
+                        )
+                    }.padding(.trailing,160)
+                }
             }
         }
     }
