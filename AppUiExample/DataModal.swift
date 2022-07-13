@@ -22,7 +22,7 @@ struct PlayerItemModal : Identifiable{
     var id: UUID = UUID()
     var shoe : Image
     var shoeName : String
-    var shirt : String
+    var shirt : Image
 }
 extension FilterData{
     static let filterItems = [FilterData(FilterName: "sa"),
@@ -37,8 +37,8 @@ extension DataModal{
     ]
 }
 extension PlayerItemModal{
-    static let DevinBooker = [PlayerItemModal(shoe: Image("GF3"), shoeName: "Zoom Freak", shirt: "Sa")]
-    static let DeColo = [PlayerItemModal(shoe: Image("KY7"), shoeName: "Zoom Freak", shirt: "")]
-    static let SehmusHazer = [PlayerItemModal(shoe: Image("KX"), shoeName: "Zoom Freak", shirt: "")]
+    static let DevinBooker = [PlayerItemModal(shoe: Image("GF3"), shoeName: "Zoom Freak", shirt: Image("shirt"))]
+    static let DeColo = [PlayerItemModal(shoe: Image("KY7"), shoeName: "Zoom Freak", shirt:Image("shirt"))]
+    static let SehmusHazer = [PlayerItemModal(shoe: Image("KX"), shoeName: "Zoom Freak", shirt:Image("shirt"))]
 
 }

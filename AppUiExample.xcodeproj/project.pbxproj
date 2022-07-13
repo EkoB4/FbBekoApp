@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350DB4D5287E94D600D81E45 /* BottomSheet-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 350DB4D4287E94D600D81E45 /* BottomSheet-SwiftUI */; };
 		351CE57328767FF100BEDEF2 /* PlayerDataModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351CE57228767FF100BEDEF2 /* PlayerDataModal.swift */; };
 		351CE57528768B6B00BEDEF2 /* AppMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351CE57428768B6B00BEDEF2 /* AppMainView.swift */; };
 		352669D628737D5100D15D5E /* AppUiExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352669D528737D5100D15D5E /* AppUiExampleApp.swift */; };
@@ -17,7 +18,6 @@
 		352669F128737D5500D15D5E /* AppUiExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352669F028737D5500D15D5E /* AppUiExampleUITests.swift */; };
 		352669F328737D5500D15D5E /* AppUiExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352669F228737D5500D15D5E /* AppUiExampleUITestsLaunchTests.swift */; };
 		35266A0128737D9000D15D5E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35266A0028737D9000D15D5E /* MainView.swift */; };
-		35266A0428737DA500D15D5E /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35266A0328737DA500D15D5E /* StartScreen.swift */; };
 		3588F23E28760BEA0039076F /* ScreenElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3588F23D28760BEA0039076F /* ScreenElements.swift */; };
 		3588F24128760E8E0039076F /* DataModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3588F24028760E8E0039076F /* DataModal.swift */; };
 		35984F41287B92FA00E38A72 /* PlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35984F40287B92FA00E38A72 /* PlayerDetails.swift */; };
@@ -54,7 +54,6 @@
 		352669F028737D5500D15D5E /* AppUiExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUiExampleUITests.swift; sourceTree = "<group>"; };
 		352669F228737D5500D15D5E /* AppUiExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUiExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		35266A0028737D9000D15D5E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		35266A0328737DA500D15D5E /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		3588F23D28760BEA0039076F /* ScreenElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenElements.swift; sourceTree = "<group>"; };
 		3588F24028760E8E0039076F /* DataModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModal.swift; sourceTree = "<group>"; };
 		35984F40287B92FA00E38A72 /* PlayerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetails.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				350DB4D5287E94D600D81E45 /* BottomSheet-SwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +165,6 @@
 			children = (
 				352669D728737D5100D15D5E /* ContentView.swift */,
 				35266A0028737D9000D15D5E /* MainView.swift */,
-				35266A0328737DA500D15D5E /* StartScreen.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -204,6 +203,9 @@
 			dependencies = (
 			);
 			name = AppUiExample;
+			packageProductDependencies = (
+				350DB4D4287E94D600D81E45 /* BottomSheet-SwiftUI */,
+			);
 			productName = AppUiExample;
 			productReference = 352669D228737D5100D15D5E /* AppUiExample.app */;
 			productType = "com.apple.product-type.application";
@@ -276,6 +278,9 @@
 				Base,
 			);
 			mainGroup = 352669C928737D5100D15D5E;
+			packageReferences = (
+				350DB4D3287E94D600D81E45 /* XCRemoteSwiftPackageReference "bottomsheet-swiftui" */,
+			);
 			productRefGroup = 352669D328737D5100D15D5E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -324,7 +329,6 @@
 				3588F24128760E8E0039076F /* DataModal.swift in Sources */,
 				352669D828737D5100D15D5E /* ContentView.swift in Sources */,
 				35266A0128737D9000D15D5E /* MainView.swift in Sources */,
-				35266A0428737DA500D15D5E /* StartScreen.swift in Sources */,
 				352669D628737D5100D15D5E /* AppUiExampleApp.swift in Sources */,
 				35984F41287B92FA00E38A72 /* PlayerDetails.swift in Sources */,
 			);
@@ -673,6 +677,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		350DB4D3287E94D600D81E45 /* XCRemoteSwiftPackageReference "bottomsheet-swiftui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shirokova/bottomsheet-swiftui.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		350DB4D4287E94D600D81E45 /* BottomSheet-SwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 350DB4D3287E94D600D81E45 /* XCRemoteSwiftPackageReference "bottomsheet-swiftui" */;
+			productName = "BottomSheet-SwiftUI";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 352669CA28737D5100D15D5E /* Project object */;
 }

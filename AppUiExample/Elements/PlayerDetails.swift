@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import BottomSheet_SwiftUI
 struct PlayerDetails: View {
     @StateObject private var viewModal : PlayerDataModal = PlayerDataModal()
     var body: some View {
@@ -18,8 +18,27 @@ struct PlayerDetails: View {
         }
     }
 }
+struct AddCartButton: View {
+    @StateObject private var viewModal : PlayerDataModal = PlayerDataModal()
+    var body: some View {
+        VStack{
+            ForEach(viewModal.playerItems){img in
+                Button {
+                    print("Booker screen openend")
+                } label: {
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color("ButtonBackgroundColor"))
+                        .overlay(Text("Go").bold()
+                                    .foregroundColor(.white))
+                        .frame(width:200,height:30)
+                }
+            }
+        }
+    }
+}
 struct DevinBookerScreen : View{
     @StateObject private var viewModal : PlayerDataModal = PlayerDataModal()
+    @State var isSheetOpen : Bool = false
     var body: some View{
         VStack{
             VStack{
@@ -30,31 +49,32 @@ struct DevinBookerScreen : View{
                             .frame(width:.infinity,height: 300)
                             .padding(.top,600)
                             .foregroundColor(.white)
-                            .overlay(HStack{
-                                player.shoe
-                                    .resizable()
-                                    .frame(width: 200, height: 200)
-                                    .padding(.top,350)
-                                VStack{
-                                Text(player.shoeName)
-                                    .font(.system(size:30))
-                                    .bold()
-                                    .padding(.top,410)
-                                    
-                                    Button {
-                                        print("Booker screen openend")
-                                    } label: {
-                                        RoundedRectangle(cornerRadius: 20)
-                                            .fill(Color("ButtonBackgroundColor"))
-                                            .overlay(Text("Go").bold()
-                                                        .foregroundColor(.white))
-                                            .frame(width:200,height:30)
-                                            .offset(y:-20)
+                            .overlay(BottomSheet(
+                                isOpen: self.$isSheetOpen,
+                                config: BottomSheetConfig(maxHeight: UIScreen.main.bounds.height/2)
+                            ){
+                                HStack{
+                                    VStack{
+                                    player.shoe
+                                        .resizable()
+                                        .frame(width: 200, height: 200)
+                                        .padding(.top,680)
+                                    player.shirt
+                                        .resizable()
+                                        .frame(width: 200, height: 200)
+                                       // .padding(.top,420)
                                     }
-
-                                   
+                                    VStack{
+                                    Text(player.shoeName)
+                                        .font(.system(size:30))
+                                        .bold()
+                                        .padding(.top,490)
+                                      AddCartButton()
+                                                .offset(y:-20)
+                                    }
+                                    Spacer(minLength:UIScreen.main.bounds.width/60)
                                 }
-                                Spacer(minLength:UIScreen.main.bounds.width/30)
+                                Color.white
                             })
                     }
                 }.background(Color("ButtonBackgroundColor").ignoresSafeArea().overlay(Image("DB")))
@@ -69,3 +89,26 @@ struct PlayerDetails_Previews: PreviewProvider {
         DevinBookerScreen()
     }
 }
+
+/*
+ HStack{
+     VStack{
+     player.shoe
+         .resizable()
+         .frame(width: 200, height: 200)
+         .padding(.top,680)
+     player.shirt
+         .resizable()
+         .frame(width: 200, height: 200)
+        // .padding(.top,420)
+     }
+     VStack{
+     Text(player.shoeName)
+         .font(.system(size:30))
+         .bold()
+         .padding(.top,490)
+       AddCartButton()
+                 .offset(y:-20)
+     }
+     Spacer(minLength:UIScreen.main.bounds.width/60)
+ }*/
