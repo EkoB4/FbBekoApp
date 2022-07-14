@@ -49,34 +49,33 @@ struct DevinBookerScreen : View{
                             .frame(width:.infinity,height: 300)
                             .padding(.top,600)
                             .foregroundColor(.white)
-                            .overlay(BottomSheet(
-                                isOpen: self.$isSheetOpen,
-                                config: BottomSheetConfig(maxHeight: UIScreen.main.bounds.height/2)
-                            ){
-                                HStack{
-                                    VStack{
-                                    player.shoe
-                                        .resizable()
-                                        .frame(width: 200, height: 200)
-                                        .padding(.top,680)
-                                    player.shirt
-                                        .resizable()
-                                        .frame(width: 200, height: 200)
-                                       // .padding(.top,420)
-                                    }
-                                    VStack{
-                                    Text(player.shoeName)
-                                        .font(.system(size:30))
-                                        .bold()
-                                        .padding(.top,490)
-                                      AddCartButton()
-                                                .offset(y:-20)
-                                    }
-                                    Spacer(minLength:UIScreen.main.bounds.width/60)
-                                }
-                                Color.white
-                            })
-                    }
+                            .overlay(
+                                BottomSheet(
+                                           isOpen: self.$isSheetOpen,
+                                           config: BottomSheetConfig(maxHeight:UIScreen.main.bounds.height/0.5)
+                                       ) {
+                                           HStack{
+                                           VStack{
+                                               player.shoe
+                                                   .resizable()
+                                                   .frame(width: 150, height: 150)
+                                                   .padding(.trailing,10)
+                                               player.shirt
+                                                   .resizable()
+                                                   .frame(width: 200, height: 200)
+                                           }
+                                               VStack{
+                                               Text(player.shoeName)
+                                                   .font(.system(size:20))
+                                                   .bold()
+                                                   .padding()
+                                                 AddCartButton()
+                                                           .offset(y:-20)
+                                               }.padding(.bottom,150)
+                                               Spacer(minLength:UIScreen.main.bounds.width/10)
+                                           }
+                                       })
+                        }
                 }.background(Color("ButtonBackgroundColor").ignoresSafeArea().overlay(Image("DB")))
                 }
             }
