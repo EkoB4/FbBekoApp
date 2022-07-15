@@ -23,6 +23,7 @@ struct PlayerItemModal : Identifiable{
     var shoe : Image
     var shoeName : String
     var shirt : Image
+    var shirtName : String
 }
 extension FilterData{
     static let filterItems = [FilterData(FilterName: "sa"),
@@ -37,8 +38,8 @@ extension DataModal{
     ]
 }
 extension PlayerItemModal{
-    static let DevinBooker = [PlayerItemModal(shoe: Image("GF3"), shoeName: "Zoom Freak", shirt: Image("shirt"))]
-    static let DeColo = [PlayerItemModal(shoe: Image("KY7"), shoeName: "Zoom Freak", shirt:Image("shirt"))]
-    static let SehmusHazer = [PlayerItemModal(shoe: Image("KX"), shoeName: "Zoom Freak", shirt:Image("shirt"))]
+    static let DevinBooker = [PlayerItemModal(shoe: Image("GF3"), shoeName: "Zoom Freak", shirt: Image("shirt"), shirtName: "Booker-22 Jersey")]
+    static let DeColo = [PlayerItemModal(shoe: Image("KY7"), shoeName: "Zoom Freak", shirt:Image("shirt"), shirtName: "DeColo-22 Jersey")]
+    static let SehmusHazer = [PlayerItemModal(shoe: Image("KX"), shoeName: "Zoom Freak", shirt:Image("shirt"), shirtName: "SehmusHazer-22 Jersey")]
 
 }

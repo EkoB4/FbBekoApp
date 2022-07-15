@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3507B3C8287F9D1F002DA606 /* SA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3507B3C7287F9D1F002DA606 /* SA.swift */; };
-		3507B3CB287F9D33002DA606 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 3507B3CA287F9D33002DA606 /* BottomSheet */; };
 		3507B3CE287F9E02002DA606 /* BottomSheet-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3507B3CD287F9E02002DA606 /* BottomSheet-SwiftUI */; };
 		351CE57328767FF100BEDEF2 /* PlayerDataModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351CE57228767FF100BEDEF2 /* PlayerDataModal.swift */; };
 		351CE57528768B6B00BEDEF2 /* AppMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351CE57428768B6B00BEDEF2 /* AppMainView.swift */; };
@@ -43,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3507B3C7287F9D1F002DA606 /* SA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SA.swift; sourceTree = "<group>"; };
 		351CE57228767FF100BEDEF2 /* PlayerDataModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataModal.swift; sourceTree = "<group>"; };
 		351CE57428768B6B00BEDEF2 /* AppMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppMainView.swift; path = ../AppMainView.swift; sourceTree = "<group>"; };
 		352669D228737D5100D15D5E /* AppUiExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppUiExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3507B3CB287F9D33002DA606 /* BottomSheet in Frameworks */,
 				3507B3CE287F9E02002DA606 /* BottomSheet-SwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,7 +88,6 @@
 		352669C928737D5100D15D5E = {
 			isa = PBXGroup;
 			children = (
-				3507B3C7287F9D1F002DA606 /* SA.swift */,
 				352669D428737D5100D15D5E /* AppUiExample */,
 				352669E528737D5500D15D5E /* AppUiExampleTests */,
 				352669EF28737D5500D15D5E /* AppUiExampleUITests */,
@@ -209,7 +204,6 @@
 			);
 			name = AppUiExample;
 			packageProductDependencies = (
-				3507B3CA287F9D33002DA606 /* BottomSheet */,
 				3507B3CD287F9E02002DA606 /* BottomSheet-SwiftUI */,
 			);
 			productName = AppUiExample;
@@ -285,7 +279,6 @@
 			);
 			mainGroup = 352669C928737D5100D15D5E;
 			packageReferences = (
-				3507B3C9287F9D33002DA606 /* XCRemoteSwiftPackageReference "bottom-sheet" */,
 				3507B3CC287F9E02002DA606 /* XCRemoteSwiftPackageReference "bottomsheet-swiftui" */,
 			);
 			productRefGroup = 352669D328737D5100D15D5E /* Products */;
@@ -332,7 +325,6 @@
 			files = (
 				351CE57328767FF100BEDEF2 /* PlayerDataModal.swift in Sources */,
 				351CE57528768B6B00BEDEF2 /* AppMainView.swift in Sources */,
-				3507B3C8287F9D1F002DA606 /* SA.swift in Sources */,
 				3588F23E28760BEA0039076F /* ScreenElements.swift in Sources */,
 				3588F24128760E8E0039076F /* DataModal.swift in Sources */,
 				352669D828737D5100D15D5E /* ContentView.swift in Sources */,
@@ -687,14 +679,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3507B3C9287F9D33002DA606 /* XCRemoteSwiftPackageReference "bottom-sheet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/weitieda/bottom-sheet";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		3507B3CC287F9E02002DA606 /* XCRemoteSwiftPackageReference "bottomsheet-swiftui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/shirokova/bottomsheet-swiftui.git";
@@ -706,11 +690,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3507B3CA287F9D33002DA606 /* BottomSheet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3507B3C9287F9D33002DA606 /* XCRemoteSwiftPackageReference "bottom-sheet" */;
-			productName = BottomSheet;
-		};
 		3507B3CD287F9E02002DA606 /* BottomSheet-SwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3507B3CC287F9E02002DA606 /* XCRemoteSwiftPackageReference "bottomsheet-swiftui" */;

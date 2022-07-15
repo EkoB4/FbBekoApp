@@ -22,7 +22,6 @@ struct AddCartButton: View {
     @StateObject private var viewModal : PlayerDataModal = PlayerDataModal()
     var body: some View {
         VStack{
-            ForEach(viewModal.playerItems){img in
                 Button {
                     print("Booker screen openend")
                 } label: {
@@ -30,10 +29,9 @@ struct AddCartButton: View {
                         .fill(Color("ButtonBackgroundColor"))
                         .overlay(Text("Go").bold()
                                     .foregroundColor(.white))
-                        .frame(width:200,height:30)
+                        .frame(width:150,height:60)
                 }
             }
-        }
     }
 }
 struct DevinBookerScreen : View{
@@ -46,33 +44,40 @@ struct DevinBookerScreen : View{
                 VStack{
                     HStack(alignment:.bottom){
                          RoundedRectangle(cornerRadius: 20)
-                            .frame(width:.infinity,height: 300)
+                            .frame(maxWidth:.infinity,maxHeight: 300)
                             .padding(.top,600)
                             .foregroundColor(.white)
                             .overlay(
                                 BottomSheet(
                                            isOpen: self.$isSheetOpen,
-                                           config: BottomSheetConfig(maxHeight:UIScreen.main.bounds.height/0.5)
+                                           config: BottomSheetConfig(maxHeight:UIScreen.main.bounds.height/1.1)
                                        ) {
-                                           HStack{
                                            VStack{
-                                               player.shoe
-                                                   .resizable()
-                                                   .frame(width: 150, height: 150)
-                                                   .padding(.trailing,10)
-                                               player.shirt
-                                                   .resizable()
-                                                   .frame(width: 200, height: 200)
-                                           }
-                                               VStack{
-                                               Text(player.shoeName)
-                                                   .font(.system(size:20))
-                                                   .bold()
-                                                   .padding()
-                                                 AddCartButton()
-                                                           .offset(y:-20)
-                                               }.padding(.bottom,150)
-                                               Spacer(minLength:UIScreen.main.bounds.width/10)
+                                               HStack{
+                                                   player.shoe
+                                                       .resizable()
+                                                       .frame(width: 150, height: 150)
+                                                       .padding(.leading,30)
+                                                   Text(player.shoeName)
+                                                       .font(.system(size:30))
+                                                       .bold()
+                                                       .frame(width:100)
+                                                   AddCartButton()
+                                                       .padding(.trailing,50)
+                                               }
+                                               HStack{
+                                                   player.shirt
+                                                       .resizable()
+                                                       .frame(width: 200, height: 200)
+                                                       .offset(x:20)
+                                                   Text(player.shirtName)
+                                                       .font(.system(size:30))
+                                                       .bold()
+                                                       .frame(width:100)
+                                                   AddCartButton()
+                                                       .padding(.trailing,65)
+                    
+                                               }
                                            }
                                        })
                         }
@@ -91,23 +96,27 @@ struct PlayerDetails_Previews: PreviewProvider {
 
 /*
  HStack{
-     VStack{
+ VStack{
      player.shoe
          .resizable()
-         .frame(width: 200, height: 200)
-         .padding(.top,680)
+         .frame(width: 150, height: 150)
+         .padding(.trailing,10)
+     Text(player.shoeName)
+         .font(.system(size:20))
+         .bold()
+         .padding()
+       AddCartButton()
+                 .offset(y:-20)
+     VStack{
      player.shirt
          .resizable()
          .frame(width: 200, height: 200)
-        // .padding(.top,420)
-     }
-     VStack{
-     Text(player.shoeName)
-         .font(.system(size:30))
-         .bold()
-         .padding(.top,490)
-       AddCartButton()
-                 .offset(y:-20)
-     }
-     Spacer(minLength:UIScreen.main.bounds.width/60)
+         Text(player.shirtName)
+             .font(.system(size:20))
+             .bold()
+             .padding()
+     }.padding(.bottom,30)
+ }
+    // Spacer(minLength:UIScreen.main.bounds.width/10)
+ }
  }*/

@@ -16,6 +16,16 @@ struct PlayersButton: View {
         }
     }
 }
+struct GoDetailsButton : View {
+    var body : some View{
+        VStack{
+            RoundedRectangle(cornerRadius: 10)
+                .frame(width:60,height:60)
+                .foregroundColor(.white)
+                .overlay(Image(systemName:"plus.app").foregroundColor(.white))
+        }
+    }
+}
 
 struct PlayerFilterButton : View{
     var body: some View{
@@ -39,6 +49,7 @@ struct PlayersScroll :View{
                     ForEach(viewModal.items){item in
                         PlayersButton().overlay(
                             VStack{
+                                Spacer(minLength: UIScreen.main.bounds.height/14)
                                 Text(item.name)
                                     .bold()
                                     .foregroundColor(.white)
@@ -48,6 +59,10 @@ struct PlayersScroll :View{
                                 .resizable()
                                 .offset(y:20)
                                 .frame(width:180,height:330)
+                                    GoDetailsButton()
+                                        .padding(.leading, 120)
+                                        .offset(y:-60)
+
                                 }
                             }
                         )
