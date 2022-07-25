@@ -67,17 +67,27 @@ struct PlayersScroll :View{
             LazyHStack{
                 ForEach(0..<1){ _ in
                     ForEach(viewModal.items){item in
-                        HStack{
+                        VStack{
                             PlayersButton().overlay(
-                                NavigationView{
-                                HStack{
+                                //NavigationView{
+                                VStack{
                                     NavigationLink {
                                         chooseScreen()
                                     } label: {
+                                        VStack{
                                         Text(item.name)
+                                                .bold()
+                                                .padding(.top,20)
+                                                .foregroundColor(.white)
+                                                
+                                            Spacer()
+                                        item.playerImage
+                                            .resizable()
+                                            .frame(width: 150, height: 330)
+                                        }
                                     }
                                 }
-                                }
+                                //}
                             )
                         }
                     }
@@ -102,6 +112,7 @@ struct PlayersScroll :View{
         }
     }
 }
+
 
 
 

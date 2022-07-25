@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
         VStack{
-            Spacer(minLength: 20)
+           // Spacer(minLength: 20)
             Text("Home")
                 .bold()
                 .multilineTextAlignment(.leading)
@@ -25,15 +25,18 @@ struct ContentView: View {
                 Spacer(minLength: 10)
             }
             VStack{
+            VStack{
                 PlayerFilterScrollView()
+                
             }.frame(width:.infinity,height: UIScreen.main.bounds.height/14)
             VStack{
                 PlayersScroll()
             }
             Spacer(minLength: UIScreen.main.bounds.height*0.2)
-
+            }
+        }.padding(.top,-90)
+            
         }
-    }
     }
 }
 
