@@ -15,10 +15,12 @@ class PlayerDataModal : ObservableObject{
         DevinBookerItems = PlayerItemModal.DevinBooker
         DeColoItems = PlayerItemModal.DeColo
         SehmuzHazer = PlayerItemModal.SehmusHazer
+
     }
     @Published var items : [DataModal]
     @Published var filterItems : [FilterData]
     @Published var SehmuzHazer : [PlayerItemModal]
     @Published var DeColoItems : [PlayerItemModal]
     @Published var DevinBookerItems : [PlayerItemModal]
+    
 }

@@ -3,7 +3,7 @@
 //  AppUiExample
 //
 //  Created by VB on 6.07.2022.
-//
+// Option + Command + Enter Open/Hide(console)
 
 import SwiftUI
 
@@ -16,27 +16,47 @@ struct PlayersButton: View {
         }
     }
 }
-struct GoDetailsButton : View {
-    var body : some View{
-        VStack{
-            RoundedRectangle(cornerRadius: 10)
-                .frame(width:60,height:60)
-                .foregroundColor(.white)
-                .overlay(Image(systemName:"plus.app").foregroundColor(.white))
-        }
-    }
-}
 
+
+/*struct PlayerScreenDestinationButton: View {
+ var itemNames = ["1" , "2" , "3"]
+ var body: some View {
+ NavigationView{
+ VStack{
+ ForEach(itemNames,id:\.self){ name in
+ 
+ VStack{
+ NavigationLink(
+ destination: Group{
+ if name == "1"{
+ ContentView()
+ }
+ if name == "2"{
+ MainView()
+ }
+ if name == "3"{
+ ContentView()
+ }
+ }) {
+ Text(name)
+ }
+ }
+ }
+ }
+ }
+ }
+ }
+ */
 struct PlayerFilterButton : View{
     var body: some View{
-            VStack{
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(.white,lineWidth: 2)
-                    .frame(width:130,height: 30)
-                    .background(Color("ButtonBackgroundColor"))
-                    .cornerRadius(20)
-                    .shadow(color: .gray, radius: 20,x:-2,y:5)
-            }
+        VStack{
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(.white,lineWidth: 2)
+                .frame(width:130,height: 30)
+                .background(Color("ButtonBackgroundColor"))
+                .cornerRadius(20)
+                .shadow(color: .gray, radius: 20,x:-2,y:5)
+        }
     }
 }
 
@@ -44,35 +64,46 @@ struct PlayersScroll :View{
     @StateObject private var viewModal : PlayerDataModal = PlayerDataModal()
     var body: some View{
         ScrollView(.horizontal){
-            LazyHStack(spacing:20){
-                ForEach(0..<1){test in
+            LazyHStack{
+                ForEach(0..<1){ _ in
                     ForEach(viewModal.items){item in
-                        PlayersButton().overlay(
-                            VStack{
-                                Spacer(minLength: UIScreen.main.bounds.height/14)
-                                Text(item.name)
-                                    .bold()
-                                    .foregroundColor(.white)
-                                    .multilineTextAlignment(.center)
-                                VStack{
-                            item.playerImage
-                                .resizable()
-                                .offset(y:20)
-                                .frame(width:180,height:330)
-                                    GoDetailsButton()
-                                        .padding(.leading, 120)
-                                        .offset(y:-60)
-
+                        HStack{
+                            PlayersButton().overlay(
+                                NavigationView{
+                                HStack{
+                                    NavigationLink {
+                                        chooseScreen()
+                                    } label: {
+                                        Text(item.name)
+                                    }
                                 }
-                            }
-                        )
+                                }
+                            )
+                        }
                     }
-                    
                 }
-            }.padding()
+            }
+        }
+    }
+    @ViewBuilder
+    func chooseScreen() -> some View{
+        ForEach(viewModal.items){item in
+            switch item.name{
+            case "Sehmus Hazer":
+                MainView()
+            case "Devin Booker":
+                MainView()
+            case"Nando De Colo":
+                MainView()
+                
+            default :
+                AppMainView()
+            }
         }
     }
 }
+
+
 
 struct PlayerFilterScrollView: View{
     @StateObject private var viewModal : PlayerDataModal = PlayerDataModal()
@@ -85,8 +116,8 @@ struct PlayerFilterScrollView: View{
                             //
                         }, label: {
                             Text(filterName.FilterName)
-                                        .bold()
-                                        .foregroundColor(.white)
+                                .bold()
+                                .foregroundColor(.white)
                         }))
                 }
             }
@@ -96,8 +127,7 @@ struct PlayerFilterScrollView: View{
 struct ScreenElements_Previews: PreviewProvider {
     static var previews: some View {
         PlayersScroll()
-        PlayerFilterScrollView()
-        
+        //PlayerFilterScrollView()
     }
 }
 

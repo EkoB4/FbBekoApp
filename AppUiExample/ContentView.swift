@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var viewModal : PlayerDataModal = PlayerDataModal()
     var body: some View {
+        NavigationView{
         VStack{
             Spacer(minLength: 20)
             Text("Home")
@@ -32,6 +33,7 @@ struct ContentView: View {
             Spacer(minLength: UIScreen.main.bounds.height*0.2)
 
         }
+    }
     }
 }
 

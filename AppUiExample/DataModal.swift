@@ -32,14 +32,14 @@ extension FilterData{
 }
 extension DataModal{
     static let items = [
-    DataModal(name: "Sehmus Hazer", playerImage: Image("Seho")),
-    DataModal(name:"Devin Booker", playerImage: Image("DB")),
-    DataModal(name:"Nando de Colo", playerImage: Image("ndc"))
+        DataModal(name: "Sehmus Hazer", playerImage: Image("Seho")),
+        DataModal(name:"Devin Booker", playerImage: Image("DB")),
+        DataModal(name:"Nando de Colo", playerImage: Image("ndc"))
     ]
 }
 extension PlayerItemModal{
-    static let DevinBooker = [PlayerItemModal(shoe: Image("GF3"), shoeName: "Zoom Freak", shirt: Image("shirt"), shirtName: "Booker-22 Jersey")]
-    static let DeColo = [PlayerItemModal(shoe: Image("KY7"), shoeName: "Zoom Freak", shirt:Image("shirt"), shirtName: "DeColo-22 Jersey")]
-    static let SehmusHazer = [PlayerItemModal(shoe: Image("KX"), shoeName: "Zoom Freak", shirt:Image("shirt"), shirtName: "SehmusHazer-22 Jersey")]
-
+    static let DevinBooker = [PlayerItemModal(shoe: Image("GF3"), shoeName: "Zoom Freak", shirt: Image("shirt"), shirtName: "Booker-22")]
+    static let DeColo = [PlayerItemModal(shoe: Image("KY7"), shoeName: "Zoom Freak", shirt:Image("shirt"), shirtName: "")]
+    static let SehmusHazer = [PlayerItemModal(shoe: Image("KX"), shoeName: "Zoom Freak", shirt:Image("shirt"), shirtName: "")]
 }
+
