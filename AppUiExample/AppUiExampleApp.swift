@@ -11,7 +11,7 @@ import SwiftUI
 struct AppUiExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            PlayersScroll()
+            ContentView()
         }
     }
 }

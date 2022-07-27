@@ -12,6 +12,7 @@ struct DataModal : Identifiable{
     var id : UUID = UUID()
     var name :String
     var playerImage : Image
+    var playerScreenName:String
 }
 struct FilterData: Identifiable{
     var id : UUID = UUID()
@@ -32,14 +33,13 @@ extension FilterData{
 }
 extension DataModal{
     static let items = [
-        DataModal(name: "Sehmus Hazer", playerImage: Image("Seho")),
-        DataModal(name:"Devin Booker", playerImage: Image("DB")),
-        DataModal(name:"Nando de Colo", playerImage: Image("ndc"))
+        DataModal(name: "Sehmus Hazer", playerImage: Image("Seho"),playerScreenName: "\(ContentView())"),
+        DataModal(name:"Devin Booker", playerImage: Image("DB"),playerScreenName: "\(DevinBookerScreen())"),
+        DataModal(name:"Nando de Colo", playerImage: Image("ndc"),playerScreenName: "\(MainView())")
     ]
 }
 extension PlayerItemModal{
     static let DevinBooker = [PlayerItemModal(shoe: Image("GF3"), shoeName: "Zoom Freak", shirt: Image("shirt"), shirtName: "Booker-22")]
-    static let DeColo = [PlayerItemModal(shoe: Image("KY7"), shoeName: "Zoom Freak", shirt:Image("shirt"), shirtName: "")]
-    static let SehmusHazer = [PlayerItemModal(shoe: Image("KX"), shoeName: "Zoom Freak", shirt:Image("shirt"), shirtName: "")]
+    static let DeColo = [PlayerItemModal(shoe: Image("KY7"), shoeName: "Zoom Freak", shirt:Image("shirt"), shirtName: "Nando-22")]
+    static let SehmusHazer = [PlayerItemModal(shoe: Image("KX"), shoeName: "Zoom Freak", shirt:Image("shirt"), shirtName: "Sehmus-22")]
 }
-

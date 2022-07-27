@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct PlayersButton: View {
     var body: some View {
         VStack{
@@ -62,6 +63,7 @@ struct PlayerFilterButton : View{
 
 struct PlayersScroll :View{
     @StateObject private var viewModal : PlayerDataModal = PlayerDataModal()
+    @State private var isSheetOpen = false
     var body: some View{
         ScrollView(.horizontal){
             LazyHStack{
@@ -71,21 +73,26 @@ struct PlayersScroll :View{
                             PlayersButton().overlay(
                                 //NavigationView{
                                 VStack{
-                                    NavigationLink {
-                                        chooseScreen()
+                                    Button {
+                                        isSheetOpen = true
                                     } label: {
                                         VStack{
-                                        Text(item.name)
+                                            Text(item.name)
                                                 .bold()
                                                 .padding(.top,20)
                                                 .foregroundColor(.white)
-                                                
+                                            
                                             Spacer()
-                                        item.playerImage
-                                            .resizable()
-                                            .frame(width: 150, height: 330)
+                                            item.playerImage
+                                                .resizable()
+                                                .frame(width: 150, height: 330)
                                         }
+                                    }.sheet(isPresented: $isSheetOpen) {
+                                        nameText()
                                     }
+                                    
+                                    
+                                    
                                 }
                                 //}
                             )
@@ -95,19 +102,12 @@ struct PlayersScroll :View{
             }
         }
     }
-    @ViewBuilder
-    func chooseScreen() -> some View{
+    func nameText() -> some View {
         ForEach(viewModal.items){item in
-            switch item.name{
-            case "Sehmus Hazer":
-                MainView()
-            case "Devin Booker":
-                MainView()
-            case"Nando De Colo":
-                MainView()
-                
-            default :
-                AppMainView()
+            if item.playerScreenName == "\(DevinBookerScreen())"{
+                DevinBookerScreen()
+            }else{
+                EmptyView()
             }
         }
     }
