@@ -13,6 +13,7 @@ struct DataModal : Identifiable{
     var name :String
     var playerImage : Image
     var playerScreenName:String
+    var playerPosition : String
 }
 struct ShoeUrls: Identifiable{
     var id : UUID = UUID()
@@ -32,9 +33,9 @@ extension ShoeUrls{
 }
 extension DataModal{
     static let items = [
-        DataModal(name: "Sehmus Hazer", playerImage: Image("Seho"),playerScreenName: "\(ContentView())"),
-        DataModal(name:"Devin Booker", playerImage: Image("DB"),playerScreenName: "\(DevinBookerScreen())"),
-        DataModal(name:"Nando de Colo", playerImage: Image("ndc"),playerScreenName: "\(MainView())")
+        DataModal(name: "Sehmus Hazer", playerImage: Image("Seho"),playerScreenName: "\(ContentView())", playerPosition: "Pivot"),
+        DataModal(name:"Devin Booker", playerImage: Image("DB"),playerScreenName: "\(DevinBookerScreen())", playerPosition: "Guard"),
+        DataModal(name:"Nando de Colo", playerImage: Image("ndc"),playerScreenName: "\(MainView())", playerPosition: "Pivot")
     ]
 }
 extension PlayerItemModal{

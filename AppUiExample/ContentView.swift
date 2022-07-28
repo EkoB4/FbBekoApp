@@ -12,6 +12,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
         VStack{
+            
            // Spacer(minLength: 20)
             Text("Home")
                 .bold()
@@ -29,12 +30,13 @@ struct ContentView: View {
                 PlayerFilterScrollView()
                 
             }.frame(width:.infinity,height: UIScreen.main.bounds.height/14)
-            VStack{
+            HStack{
                 PlayersScroll()
             }
-            Spacer(minLength: UIScreen.main.bounds.height*0.2)
+            Spacer(minLength: UIScreen.main.bounds.height*0.1)
             }
-        }.padding(.top,-90)
+        }.background(LinearGradient(colors: [Color("ScreenBackgroundColor"),.white], startPoint: .bottomLeading, endPoint: .topTrailing))
+        .padding(.top,-90)
             
         }
     }

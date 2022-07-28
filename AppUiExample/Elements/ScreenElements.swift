@@ -12,7 +12,7 @@ struct PlayersButton: View {
     var body: some View {
         VStack{
             RoundedRectangle(cornerRadius: 20)
-                .frame(width:200,height: 400)
+                .frame(width:350,height: 490)
                 .foregroundColor(Color("ButtonBackgroundColor"))
         }
     }
@@ -56,7 +56,7 @@ struct PlayerFilterButton : View{
                 .frame(width:130,height: 30)
                 .background(Color("ButtonBackgroundColor"))
                 .cornerRadius(20)
-                .shadow(color: .gray, radius: 20,x:-2,y:5)
+            //.shadow(color: .gray, radius: 20,x:-2,y:5)
         }
     }
 }
@@ -77,15 +77,16 @@ struct PlayersScroll :View{
                                         isSheetOpen = true
                                     } label: {
                                         VStack{
-                                            Text(item.name)
+                                            Text(item.name).font(.system(size:50))
                                                 .bold()
                                                 .padding(.top,20)
                                                 .foregroundColor(.white)
                                             
+                                            
                                             Spacer()
                                             item.playerImage
                                                 .resizable()
-                                                .frame(width: 150, height: 330)
+                                                .frame(width: 220, height: 400)
                                         }
                                     }.sheet(isPresented: $isSheetOpen) {
                                         nameText()
@@ -118,19 +119,24 @@ struct PlayersScroll :View{
 
 struct PlayerFilterScrollView: View{
     @StateObject private var viewModal : PlayerDataModal = PlayerDataModal()
+    var PlayerPositionArray = ["Pivot" , "Guard"]
     var body: some View{
         ScrollView(.horizontal){
             LazyHStack(spacing:20){
-                    PlayerFilterButton()
-                        .overlay(Button(action: {
-                            //
-                        }, label: {
-                            Text("")
-                                .bold()
-                                .foregroundColor(.white)
-                        }))
+                ForEach(0..<3){ _ in
+                    ForEach(viewModal.items){position in
+                        PlayerFilterButton()
+                            .overlay(Button(action: {
+                                //
+                            }, label: {
+                                Text(position.playerPosition)
+                                    .bold()
+                                    .foregroundColor(.white)
+                            }))
+                    }
                 }
             }
+        }
     }
 }
 struct ScreenElements_Previews: PreviewProvider {
