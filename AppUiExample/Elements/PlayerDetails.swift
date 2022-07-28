@@ -19,11 +19,12 @@ struct PlayerDetails: View {
     }
 }
 struct AddCartButton: View {
+    @Environment(\.openURL) var openUrl
     @StateObject private var viewModal : PlayerDataModal = PlayerDataModal()
     var body: some View {
         VStack{
                 Button {
-                    print("Booker screen openend")
+                    openUrl(URL(string: "https://www.sneaksup.com/nike-zoom-freak-3-da0694-001?matchtype=&utm_term=&gclid=Cj0KCQjw54iXBhCXARIsADWpsG9RqHwAiYxEZgzk0Dplgafyy2r_FT4bRgRqUZr6tFasMQx0Na-cJkoaAoCYEALw_wcB")!)
                 } label: {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color("ButtonBackgroundColor"))

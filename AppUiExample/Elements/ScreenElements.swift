@@ -121,18 +121,16 @@ struct PlayerFilterScrollView: View{
     var body: some View{
         ScrollView(.horizontal){
             LazyHStack(spacing:20){
-                ForEach(viewModal.filterItems){filterName in
                     PlayerFilterButton()
                         .overlay(Button(action: {
                             //
                         }, label: {
-                            Text(filterName.FilterName)
+                            Text("")
                                 .bold()
                                 .foregroundColor(.white)
                         }))
                 }
             }
-        }
     }
 }
 struct ScreenElements_Previews: PreviewProvider {

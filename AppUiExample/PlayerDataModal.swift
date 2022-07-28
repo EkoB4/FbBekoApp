@@ -11,14 +11,14 @@ import SwiftUI
 class PlayerDataModal : ObservableObject{
     init(){
         items = DataModal.items
-        filterItems = FilterData.filterItems
+        itemUrls = ShoeUrls.ItemUrls
         DevinBookerItems = PlayerItemModal.DevinBooker
         DeColoItems = PlayerItemModal.DeColo
         SehmuzHazer = PlayerItemModal.SehmusHazer
 
     }
     @Published var items : [DataModal]
-    @Published var filterItems : [FilterData]
+    @Published var itemUrls : [ShoeUrls]
     @Published var SehmuzHazer : [PlayerItemModal]
     @Published var DeColoItems : [PlayerItemModal]
     @Published var DevinBookerItems : [PlayerItemModal]

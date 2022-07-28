@@ -9,9 +9,12 @@ import SwiftUI
 
 struct AppMainView: View {
     @StateObject private var viewModal : PlayerDataModal = PlayerDataModal()
+    @Environment (\.openURL) private var openUrl 
     var body: some View {
         VStack{
-            Text("sa")
+            Link("Visit Apple", destination: URL(string: "https://www.apple.com")!)
+                .font(.title)
+                .foregroundColor(.red)
         }
     }
 }

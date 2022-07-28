@@ -14,9 +14,10 @@ struct DataModal : Identifiable{
     var playerImage : Image
     var playerScreenName:String
 }
-struct FilterData: Identifiable{
+struct ShoeUrls: Identifiable{
     var id : UUID = UUID()
-    var FilterName: String
+    var shoeUrl: String
+    
 }
 
 struct PlayerItemModal : Identifiable{
@@ -26,10 +27,8 @@ struct PlayerItemModal : Identifiable{
     var shirt : Image
     var shirtName : String
 }
-extension FilterData{
-    static let filterItems = [FilterData(FilterName: "sa"),
-    FilterData(FilterName: "as"),
-    FilterData(FilterName: "fs")]
+extension ShoeUrls{
+    static let ItemUrls = [ShoeUrls(shoeUrl: "https://www.hackingwithswift.com/quick-start/swiftui")]
 }
 extension DataModal{
     static let items = [
