@@ -7,5 +7,5 @@
 ![ezgif com-gif-maker (9)](https://user-images.githubusercontent.com/41589534/181508707-b5fc8fc1-a268-4194-aec8-2d43ce7e5a03.gif)
 ![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/41589534/181508829-248a16f0-7778-4289-9f25-8398d79a2cc9.gif)
 
-##New Screen Design Created 
+## New Screen Design Created 
 ![Screen Shot 2022-07-28 at 17 02 08](https://user-images.githubusercontent.com/41589534/181524956-033e105c-415e-4c3e-9538-9467acecac24.png)
